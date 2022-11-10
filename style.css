@@ -91,30 +91,30 @@ h1.main, p.demos {
 	text-shadow: 0px 0px 1px rgb(238, 75, 43);
 }
 .sp-container h2.frame-5 span {
-	-webkit-animation: blurFadeIn 3s ease-in 12s backwards;
-	-moz-animation: blurFadeIn 1s ease-in 12s backwards;
-	-ms-animation: blurFadeIn 3s ease-in 12s backwards;
-	animation: blurFadeIn 3s ease-in 12s backwards;
+	-webkit-animation: blurFadeIn 2s ease-in 10s backwards;
+	-moz-animation: blurFadeIn 1s ease-in 10s backwards;
+	-ms-animation: blurFadeIn 2s ease-in 10s backwards;
+	animation: blurFadeIn 2s ease-in 10s backwards;
 	color: transparent;
 	text-shadow: 0px 0px 1px rgb(238, 75, 43);
 }
 .sp-container h2.frame-5 span:nth-child(2) {
+	-webkit-animation-delay: 11s;
+	-moz-animation-delay: 11s;
+	-ms-animation-delay: 11s;
+	animation-delay: 11s;
+}
+.sp-container h2.frame-5 span:nth-child(3) {
+	-webkit-animation-delay: 12s;
+	-moz-animation-delay: 12s;
+	-ms-animation-delay: 142;
+	animation-delay: 12s;
+}
+.sp-container h2.frame-5 span:nth-child(4) {
 	-webkit-animation-delay: 13s;
 	-moz-animation-delay: 13s;
 	-ms-animation-delay: 13s;
 	animation-delay: 13s;
-}
-.sp-container h2.frame-5 span:nth-child(3) {
-	-webkit-animation-delay: 14s;
-	-moz-animation-delay: 14s;
-	-ms-animation-delay: 14s;
-	animation-delay: 14s;
-}
-.sp-container h2.frame-5 span:nth-child(4) {
-	-webkit-animation-delay: 15s;
-	-moz-animation-delay: 15s;
-	-ms-animation-delay: 15s;
-	animation-delay: 15s;
 }
 .sp-globe {
 	position: absolute;
