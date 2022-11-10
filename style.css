@@ -91,10 +91,10 @@ h1.main, p.demos {
 	text-shadow: 0px 0px 1px rgb(238, 75, 43);
 }
 .sp-container h2.frame-5 span {
-	-webkit-animation: blurFadeIn 2s ease-in 10s backwards;
+	-webkit-animation: blurFadeIn 2.5s ease-in 10s backwards;
 	-moz-animation: blurFadeIn 1s ease-in 10s backwards;
-	-ms-animation: blurFadeIn 2s ease-in 10s backwards;
-	animation: blurFadeIn 2s ease-in 10s backwards;
+	-ms-animation: blurFadeIn 2.5s ease-in 10s backwards;
+	animation: blurFadeIn 2.5s ease-in 10s backwards;
 	color: transparent;
 	text-shadow: 0px 0px 1px rgb(238, 75, 43);
 }
