@@ -1,223 +1,339 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="icon" type="image/png" href="http://imgur.com/CILKGax.png">
-		<title>Anh Yêu Em ♥</title>	    
-        <link type="text/css" rel="stylesheet" href="./js/default.css">
-		<script type="text/javascript" src="./js/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/jscex.min.js"></script>
-		<script type="text/javascript" src="./js/jscex-parser.js"></script>
-		<script type="text/javascript" src="./js/jscex-jit.js"></script>
-		<script type="text/javascript" src="./js/jscex-builderbase.min.js"></script>
-		<script type="text/javascript" src="./js/jscex-async.min.js"></script>
-		<script type="text/javascript" src="./js/jscex-async-powerpack.min.js"></script>
-		<script type="text/javascript" src="./js/functions.js" charset="utf-8"></script>
-		<script type="text/javascript" src="./js/love.js" charset="utf-8"></script>
-	    <style type="text/css"></style>
+<!DOCTYPE HTML PUBLIC >
+<link rel="stylesheet" href="style.css">
+<HTML>
 
-</head>
-    <body>
-        <div id="main">
-             <div id="wrap">
-                <div id="text">
-			        <div id="code">
-									<!-- (1) CHỈNH SỬA LỜI CỦA BẠN TẠI ĐÂY-->
-			      <font color="#3500ff"><span class="say">Hello Oanh, người con gái anh yêu!</span><br>
-						<span class="say">Em có nhớ chúng ta đã gặp nhau được bao nhiêu ngày không ?</span><br>
-						<span class="say">Anh thì nhớ rất rõ đấy.</span><br>
-						<span class="say"> </span><br>
-						<span class="say">Người ta nói bệnh nào cũng có thuốc chữa</span><br>
-						<span class="say">Anh đã không tin điều đó cho đến khi anh gặp được em</span><br>
-						<span class="say">Anh phát hiện ra rằng anh mang một căn bệnh mà có lẽ,</span><br>
-						<span class="say">Có lẽ sẽ không bao giờ có thuốc điều trị</span><br>
-						<span class="say">Là căn bệnh hạnh phúc nhất mà anh may mắn mắc phải</span><br>
-						<span class="say">Đó là bệnh yêu em quá nhiều :))</span><br>
-                        <span class="say">Yêu em cho đến khi nào anh không còn tồn tại </span><br>
-						<span class="say">Hãy cứ tin ANH, em nhé!</span><br>
-                        <span class="say">Chúc em hạnh phúc bên anh, hehe ♥!</span><br>
-                        <span class="say"><span class="space"></span> -- Khánh yêu Oanh ♥ --</span>
-						<!-- Chỉnh sửa đoạn này -->
-			  </font></p>
-      </div>
-                </div>
-                <div id="clock-box">
-					<span class="STYLE1"> Thời gian đã yêu em</span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
-            </div>
+<HEAD>
+    <TITLE>I Love You</TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+    <META NAME="Author" CONTENT="">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Description" CONTENT="">
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background: rgb(0, 0, 0);
+        }
+        
+        canvas {
+            position: absolute;
             
-        </div>
-    
-    <script>
-    </script>
-
-    <script>
-    (function(){
-        var canvas = $('#canvas');
-		
-        if (!canvas[0].getContext) {
-            $("#error").show();
-            return false;        }
-
-        var width = canvas.width();
-        var height = canvas.height();        
-        canvas.attr("width", width);
-        canvas.attr("height", height);
-        var opts = {
-            seed: {
-                x: width / 2 - 20,
-                color: "rgb(190, 26, 37)",
-                scale: 2
-            },
-            branch: [
-                [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
-                    ]],
-                    [550, 445, 600, 356, 680, 345, 12, 100, [
-                        [578, 400, 648, 409, 661, 426, 3, 80]
-                    ]],
-                    [539, 281, 537, 248, 534, 217, 3, 40],
-                    [546, 397, 413, 247, 328, 244, 9, 80, [
-                        [427, 286, 383, 253, 371, 205, 2, 40],
-                        [498, 345, 435, 315, 395, 330, 4, 60]
-                    ]],
-                    [546, 357, 608, 252, 678, 221, 6, 100, [
-                        [590, 293, 646, 277, 648, 271, 2, 80]
-                    ]]
-                ]] 
-            ],
-            bloom: {
-                num: 700,
-                width: 1080,
-                height: 650,
-            },
-            footer: {
-                width: 1200,
-                height: 5,
-                speed: 10,
+            width: 100%;
+            height: 100%;
+        }
+        
+        canvas {
+            /* top: 50%;
+            left: 50%; */
+            z-index: 1;
+            display: block;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            animation: heart 1.5s ease infinite
+        }
+        
+        @keyframes heart {
+            0% {
+                transform: scale(1);
+            }
+            30% {
+                transform: scale(.8);
+            }
+            /* 60% {
+                transform: scale(1.2);
+            } */
+            100% {
+                transform: scale(1);
             }
         }
+    </style>
+</HEAD>
 
-        var tree = new Tree(canvas[0], width, height, opts);
-        var seed = tree.seed;
-        var foot = tree.footer;
-        var hold = 1;
+<BODY>
+    <div class="sp-container">
+        <div class="sp-content">
+            <div class="sp-globe"></div>
+            <h2 class="frame-1">Hé Lô :))</h2>
+            <h2 class="frame-2">Emm Ơi</h2>
+            <h2 class="frame-3">Anh Nhớ Em Quá À:((</h2>
+            <h2 class="frame-4">Em Qua Chở Anh</h2>
+            <h2 class="frame-5">
+                <span>Đi</span>
+                <span>Cháy</span>
+                <span>Phố</span>
+                <span>Điiiiii:33</span>
+            </h2>
+            
+        </div>
+    </div>
+      
+   
+    <canvas id="pinkboard">
+        <canvas id="pinkboard">
+        </canvas>
+    </canvas>
+    <script>
+        /*
+         * Settings
+         */
+        var settings = {
+            particles: {
+                length: 2200, // maximum amount of particles
+                duration: 2, // particle duration in sec
+                velocity: 120, // particle velocity in pixels/sec
+                effect: -1.2, // play with this for a nice effect
+                size: 14, // particle size in pixels
+            },
+        };
 
-        canvas.click(function(e) {
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            if (seed.hover(x, y)) {
-                hold = 0; 
-                canvas.unbind("click");
-                canvas.unbind("mousemove");
-                canvas.removeClass('hand');
+        /*
+         * RequestAnimationFrame polyfill by Erik Möller
+         */
+        (function() {
+            var b = 0;
+            var c = ["ms", "moz", "webkit", "o"];
+            for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
+                window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
+                window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"]
             }
-        }).mousemove(function(e){
-            var offset = canvas.offset(), x, y;
-            x = e.pageX - offset.left;
-            y = e.pageY - offset.top;
-            canvas.toggleClass('hand', seed.hover(x, y));
-        });
-
-        var seedAnimate = eval(Jscex.compile("async", function () {
-            seed.draw();
-            while (hold) {
-                $await(Jscex.Async.sleep(10));
+            if (!window.requestAnimationFrame) {
+                window.requestAnimationFrame = function(h, e) {
+                    var d = new Date().getTime();
+                    var f = Math.max(0, 16 - (d - b));
+                    var g = window.setTimeout(function() {
+                        h(d + f)
+                    }, f);
+                    b = d + f;
+                    return g
+                }
             }
-            while (seed.canScale()) {
-                seed.scale(0.95);
-                $await(Jscex.Async.sleep(10));
+            if (!window.cancelAnimationFrame) {
+                window.cancelAnimationFrame = function(d) {
+                    clearTimeout(d)
+                }
             }
-            while (seed.canMove()) {
-                seed.move(0, 2);
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
+        }());
+
+        /*
+         * Point class
+         */
+        var Point = (function() {
+            function Point(x, y) {
+                this.x = (typeof x !== 'undefined') ? x : 0;
+                this.y = (typeof y !== 'undefined') ? y : 0;
             }
-        }));
+            Point.prototype.clone = function() {
+                return new Point(this.x, this.y);
+            };
+            Point.prototype.length = function(length) {
+                if (typeof length == 'undefined')
+                    return Math.sqrt(this.x * this.x + this.y * this.y);
+                this.normalize();
+                this.x *= length;
+                this.y *= length;
+                return this;
+            };
+            Point.prototype.normalize = function() {
+                var length = this.length();
+                this.x /= length;
+                this.y /= length;
+                return this;
+            };
+            return Point;
+        })();
 
-        var growAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.grow();
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canGrow());
-        }));
-
-        var flowAnimate = eval(Jscex.compile("async", function () {
-            do {
-    	        tree.flower(2);
-                $await(Jscex.Async.sleep(10));
-            } while (tree.canFlower());
-        }));
-
-        var moveAnimate = eval(Jscex.compile("async", function () {
-            tree.snapshot("p1", 240, 0, 610, 680);
-            while (tree.move("p1", 500, 0)) {
-                foot.draw();
-                $await(Jscex.Async.sleep(10));
+        /*
+         * Particle class
+         */
+        var Particle = (function() {
+            function Particle() {
+                this.position = new Point();
+                this.velocity = new Point();
+                this.acceleration = new Point();
+                this.age = 0;
             }
-            foot.draw();
-            tree.snapshot("p2", 500, 0, 610, 680);
+            Particle.prototype.initialize = function(x, y, dx, dy) {
+                this.position.x = x;
+                this.position.y = y;
+                this.velocity.x = dx;
+                this.velocity.y = dy;
+                this.acceleration.x = dx * settings.particles.effect;
+                this.acceleration.y = dy * settings.particles.effect;
+                this.age = 0;
+            };
+            Particle.prototype.update = function(deltaTime) {
+                this.position.x += this.velocity.x * deltaTime;
+                this.position.y += this.velocity.y * deltaTime;
+                this.velocity.x += this.acceleration.x * deltaTime;
+                this.velocity.y += this.acceleration.y * deltaTime;
+                this.age += deltaTime;
+            };
+            Particle.prototype.draw = function(context, image) {
+                function ease(t) {
+                    return (--t) * t * t + 1;
+                }
+                var size = image.width * ease(this.age / settings.particles.duration);
+                context.globalAlpha = 1 - this.age / settings.particles.duration;
+                context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+            };
+            return Particle;
+        })();
 
-            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
-            canvas.css("background", "#ffe");
-            $await(Jscex.Async.sleep(300));
-            canvas.css("background", "none");
-        }));
+        /*
+         * ParticlePool class
+         */
+        var ParticlePool = (function() {
+            var particles,
+                firstActive = 0,
+                firstFree = 0,
+                duration = settings.particles.duration;
 
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
+            function ParticlePool(length) {
+                // create and populate particle pool
+                particles = new Array(length);
+                for (var i = 0; i < particles.length; i++)
+                    particles[i] = new Particle();
             }
-        }));
+            ParticlePool.prototype.add = function(x, y, dx, dy) {
+                particles[firstFree].initialize(x, y, dx, dy);
 
-        var textAnimate = eval(Jscex.compile("async", function () {
-		    var together = new Date();
-		    var year = 2022, month = 5, day = 22; // (2) thay đổi ngày tháng năm yêu nhau tại đây
-		    together.setFullYear(year, month - 1, day); 			
-		    together.setHours(0);							
-		    together.setMinutes(0);				
-		    together.setSeconds(0);					
-		    together.setMilliseconds(0);			
+                // handle circular queue
+                firstFree++;
+                if (firstFree == particles.length) firstFree = 0;
+                if (firstActive == firstFree) firstActive++;
+                if (firstActive == particles.length) firstActive = 0;
+            };
+            ParticlePool.prototype.update = function(deltaTime) {
+                var i;
 
-		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
+                // update active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].update(deltaTime);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].update(deltaTime);
+                }
+
+                // remove inactive particles
+                while (particles[firstActive].age >= duration && firstActive != firstFree) {
+                    firstActive++;
+                    if (firstActive == particles.length) firstActive = 0;
+                }
+
+
+            };
+            ParticlePool.prototype.draw = function(context, image) {
+                // draw active particles
+                if (firstActive < firstFree) {
+                    for (i = firstActive; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+                if (firstFree < firstActive) {
+                    for (i = firstActive; i < particles.length; i++)
+                        particles[i].draw(context, image);
+                    for (i = 0; i < firstFree; i++)
+                        particles[i].draw(context, image);
+                }
+            };
+            return ParticlePool;
+        })();
+
+        /*
+         * Putting it all together
+         */
+        (function(canvas) {
+            var context = canvas.getContext('2d'),
+                particles = new ParticlePool(settings.particles.length),
+                particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+                time;
+
+            // get point on heart with -PI <= t <= PI
+            function pointOnHeart(t) {
+                return new Point(
+                    160 * Math.pow(Math.sin(t), 3),
+                    130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+                );
             }
-        }));
 
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
+            // creating the particle image using a dummy canvas
+            var image = (function() {
+                var canvas = document.createElement('canvas'),
+                    context = canvas.getContext('2d');
+                canvas.width = settings.particles.size;
+                canvas.height = settings.particles.size;
+                // helper function to create the path
+                function to(t) {
+                    var point = pointOnHeart(t);
+                    point.x = settings.particles.size / 3 + point.x * settings.particles.size / 550;
+                    point.y = settings.particles.size / 3 - point.y * settings.particles.size / 550;
+                    return point;
+                }
+                // create the path
+                context.beginPath();
+                var t = -Math.PI;
+                var point = to(t);
+                context.moveTo(point.x, point.y);
+                while (t < Math.PI) {
+                    t += 0.01; // baby steps!
+                    point = to(t);
+                    context.lineTo(point.x, point.y);
+                }
+                context.closePath();
+                // create the fill
+                context.fillStyle = '#ea80b0';
+                context.fill();
+                // create the image
+                var image = new Image();
+                image.src = canvas.toDataURL();
+                return image;
+            })();
 
-            textAnimate().start();
+            // render that thing!
+            function render() {
+                // next animation frame
+                requestAnimationFrame(render);
 
-            $await(jumpAnimate());
-        }));
+                // update time
+                var newTime = new Date().getTime() / 1000,
+                    deltaTime = newTime - (time || newTime);
+                time = newTime;
 
-        runAsync().start();
-    })();
+                // clear canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                // create new particles
+                var amount = particleRate * deltaTime;
+                for (var i = 0; i < amount; i++) {
+                    var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+                    var dir = pos.clone().length(settings.particles.velocity);
+                    particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+                }
+
+                // update and draw particles
+                particles.update(deltaTime);
+                particles.draw(context, image);
+            }
+
+            // handle (re-)sizing of the canvas
+            function onResize() {
+                canvas.width = canvas.clientWidth;
+                canvas.height = canvas.clientHeight;
+            }
+            window.onresize = onResize;
+
+            // delay rendering bootstrap
+            setTimeout(function() {
+                onResize();
+                render();
+            }, 10);
+        })(document.getElementById('pinkboard'));
     </script>
-<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
-				
+</BODY>
 
-</div>
-<iframe src="https://www.nhaccuatui.com/mh/auto/sLyG66mkb5Lc" width="620" height="382" frameborder="0" allowfullscreen allow="autoplay"></iframe><!-- (3) Thay đổi nhạc tại đây-->
-
-<style>
-
-</style>
-</body>
-
-</html>
+</HTML>
